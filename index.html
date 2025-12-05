@@ -21,13 +21,24 @@
     </header>
 
     <!-- NAV -->
-    <nav class="nav-tabs">
-      <button class="nav-btn active" data-view="myday">My Day</button>
-      <button class="nav-btn" data-view="study">Study</button>
-      <button class="nav-btn" data-view="training">Training</button>
-      <button class="nav-btn" data-view="food">Food</button>
-      <button class="nav-btn" data-view="sleep">Sleep</button>
-    </nav>
+    <!-- NAV + APK DOWNLOAD -->
+<div class="tab-row-with-apk">
+
+  <nav class="nav-tabs tab-row">
+    <button class="nav-btn active" data-view="myday">My Day</button>
+    <button class="nav-btn" data-view="study">Study</button>
+    <button class="nav-btn" data-view="training">Training</button>
+    <button class="nav-btn" data-view="food">Food</button>
+    <button class="nav-btn" data-view="sleep">Sleep</button>
+  </nav>
+
+  <!-- Slim side APK chip -->
+  <a href="downloads/LifeSync.apk" download class="apk-chip">
+    ⬇ Android APK
+  </a>
+
+</div>
+
 
     <!-- MAIN VIEWS -->
     <main>
@@ -162,9 +173,7 @@
   <script src="data.js"></script>
   <script src="app.js"></script>
   <!-- Download APK Button -->
-<div class="download-apk-wrapper">
-  <a href="downloads/LifeSync.apk" download class="download-apk-button">
-    Download Android App (APK)
+
   </a>
 </div>
 

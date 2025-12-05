@@ -820,43 +820,53 @@ body {
   font-size: 0.78rem;
   color: #9ca3af;
 }
-.download-apk-wrapper {
-  margin-top: 24px;
-  text-align: center;
+/* Container: tabs + apk chip in one row */
+.tab-row-with-apk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Base button style */
-.download-apk-button {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff6b6b, #f7b42c);
-  color: #ffffff;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+/* keep your existing .tab styles; this just prevents stretching */
+.tab-row-with-apk .tab-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Light-green sharp APK chip */
+.apk-chip {
+  padding: 6px 12px;
+  border-radius: 6px;              /* sharp, not oval */
+  border: 1px solid #38e29f;       /* light green */
+  color: #b9ffe0;                  /* soft mint text */
+  font-size: 0.85rem;
+  font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 0 12px rgba(247, 180, 44, 0.7);
-  position: relative;
-  overflow: hidden;
-  animation: apkPulse 1.8s infinite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(7, 39, 32, 0.9); /* subtle dark green bg */
+  box-shadow: 0 0 10px rgba(56, 226, 159, 0.35);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    background 0.15s ease-out,
+    border-color 0.15s ease-out;
+  animation: apkChipGlow 1.8s infinite ease-in-out;
 }
 
-/* Hover effect */
-.download-apk-button:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 18px rgba(247, 180, 44, 0.9);
+/* Hover / press states */
+.apk-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(12, 67, 52, 0.95);
+  box-shadow: 0 0 16px rgba(56, 226, 159, 0.6);
+  border-color: #7fffd4;
 }
 
-/* Simple pulsing glow */
-@keyframes apkPulse {
-  0% {
-    box-shadow: 0 0 10px rgba(247, 180, 44, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 22px rgba(247, 180, 44, 1);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(247, 180, 44, 0.6);
-  }
+.apk-chip:active {
+  transform: translateY(0);
+  box-shadow: 0 0 6px rgba(56, 226, 159, 0.4);
 }
+
+
+
