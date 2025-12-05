@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Captain's Exam War Room</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="top-left">
+        <h1>Captain's Exam War Room</h1>
+        <p id="todayLabel">Today: --</p>
+      </div>
+      <div class="top-right">
+        <div class="pill" id="seasonLabel">Season: 7 Dec – 5 Jan</div>
+        <div class="pill" id="daysLeftLabel">Days left: --</div>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav-tabs">
+      <button class="nav-btn active" data-view="myday">My Day</button>
+      <button class="nav-btn" data-view="study">Study</button>
+      <button class="nav-btn" data-view="training">Training</button>
+      <button class="nav-btn" data-view="food">Food</button>
+      <button class="nav-btn" data-view="sleep">Sleep</button>
+    </nav>
+
+    <!-- MAIN VIEWS -->
+    <main>
+      <!-- MY DAY VIEW -->
+      <section id="view-myday" class="view active">
+        <section class="summary-strip">
+          <div>
+            <h2>Daily Command Center</h2>
+            <p id="nextExamLabel">Next exam: --</p>
+          </div>
+          <div class="daily-score">
+            <span>Daily Score</span>
+            <div class="score-number" id="dailyScore">0</div>
+          </div>
+        </section>
+
+        <section class="blocks-grid">
+          <!-- Sleep block -->
+          <div class="block-card" data-open="sleep">
+            <div class="block-header">
+              <h3>Sleep</h3>
+              <span class="tag" id="sleepTag">Target: -- h</span>
+            </div>
+            <p class="block-sub">Last night: <span id="sleepLastNight">-- h</span></p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="sleepProgress"></div>
+            </div>
+            <p class="block-foot">Status: <span id="sleepStatus">no data</span></p>
+          </div>
+
+          <!-- Study block -->
+          <div class="block-card" data-open="study">
+            <div class="block-header">
+              <h3>Study</h3>
+              <span class="tag" id="studyTargetTag">Target: -- h</span>
+            </div>
+            <p class="block-sub">
+              Today: <span id="studyTodayHours">0</span> h • Subjects: 
+              <span id="studySubjectsTouched">0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="studyProgress"></div>
+            </div>
+            <p class="block-foot">Overall completion: <span id="studyOverallPct">0%</span></p>
+          </div>
+
+          <!-- Training block -->
+          <div class="block-card" data-open="training">
+            <div class="block-header">
+              <h3>Training</h3>
+              <span class="tag" id="trainingDayTag">Today: --</span>
+            </div>
+            <p class="block-sub">
+              Done: <span id="trainingMinutes">0</span> / 
+              <span id="trainingTargetMinutes">0</span> mins
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="trainingProgress"></div>
+            </div>
+            <p class="block-foot">
+              Creatine 3g: <span id="creatineStatus">❌</span> • 
+              TENS: <span id="tensStatus">❌</span>
+            </p>
+          </div>
+
+          <!-- Food block -->
+          <div class="block-card" data-open="food">
+            <div class="block-header">
+              <h3>Food</h3>
+              <span class="tag" id="waterTag">Water: 0 / 4 L</span>
+            </div>
+            <p class="block-sub">
+              Food score: <span id="foodScore">0</span> / 100
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="foodProgress"></div>
+            </div>
+            <p class="block-foot" id="foodQuote">“Discipline tastes better than junk.”</p>
+          </div>
+        </section>
+      </section>
+
+      <!-- STUDY VIEW -->
+      <section id="view-study" class="view">
+        <header class="section-header">
+          <h2>Study Dashboard</h2>
+          <p>Track each subject, syllabus completion, and exam countdown.</p>
+        </header>
+        <div id="subjectsOverview" class="cards-grid">
+          <!-- Subject cards rendered by JS -->
+        </div>
+        <div id="subjectDetail" class="detail-panel hidden">
+          <!-- Single subject page rendered by JS -->
+        </div>
+      </section>
+
+      <!-- TRAINING VIEW -->
+      <section id="view-training" class="view">
+        <header class="section-header">
+          <h2>Training Dashboard</h2>
+          <p>Your “Train hook like Alizhan” plan, day-wise.</p>
+        </header>
+        <div id="trainingToday" class="detail-panel">
+          <!-- Today’s workout rendered by JS -->
+        </div>
+      </section>
+
+      <!-- FOOD VIEW -->
+      <section id="view-food" class="view">
+        <header class="section-header">
+          <h2>Food Planner</h2>
+          <p>What to eat each meal so you stay strong and not sloppy.</p>
+        </header>
+        <div id="foodMeals" class="detail-panel">
+          <!-- Breakfast / Lunch / Tea / Dinner suggestions go here -->
+        </div>
+      </section>
+
+      <!-- SLEEP VIEW -->
+     <section id="view-sleep" class="view">
+  <h2>Sleep Insights</h2>
+  <p class="section-subtitle">Keep your brain sharp and memory online.</p>
+
+  <div class="panel" id="sleepPanel">
+    <!-- filled by app.js -->
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,822 @@
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 12px 32px;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.top-left h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.top-left p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.top-right {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.4);
+  font-size: 0.75rem;
+}
+
+/* ===== NAV ===== */
+.nav-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.4);
+  background: rgba(15,23,42,0.9);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  border-color: transparent;
+}
+
+/* ===== VIEWS ===== */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.summary-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.4);
+}
+
+.summary-strip h2 {
+  font-size: 1rem;
+}
+
+.summary-strip p {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.daily-score {
+  text-align: right;
+}
+
+.daily-score span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.score-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ===== MY DAY BLOCKS ===== */
+.blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.block-card {
+  background: radial-gradient(circle at top left, rgba(34,197,94,0.12), transparent 55%),
+              #020617;
+  border-radius: 18px;
+  border: 1px solid #1f2937;
+  padding: 10px 12px 12px;
+  cursor: pointer;
+  transition: transform 0.18s ease-out, box-shadow 0.18s, border-color 0.18s;
+}
+
+.block-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(15,23,42,0.9);
+  border-color: rgba(34,197,94,0.7);
+}
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.block-header h3 {
+  font-size: 0.95rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+}
+
+.block-sub {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.block-foot {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #020617;
+  border: 1px solid #020617;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  transition: width 0.35s ease-out;
+}
+
+/* ===== SECTIONS / DETAIL PANELS ===== */
+.section-header {
+  margin: 8px 0 10px;
+}
+
+.section-header h2 {
+  font-size: 1.05rem;
+}
+
+.section-header p {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.detail-panel {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(15,23,42,0.95);
+  border: 1px solid rgba(148,163,184,0.4);
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .summary-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ===== STUDY: SUBJECT CARDS & DETAIL ===== */
+.subject-card {
+  cursor: pointer;
+}
+
+.subject-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.subject-meta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.subject-meta span + span::before {
+  content: "•";
+  margin: 0 4px;
+  opacity: 0.6;
+}
+
+.subject-progress-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* Subject detail */
+.subject-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.subject-detail-main h3 {
+  font-size: 1rem;
+}
+
+.subject-detail-main p {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.subject-detail-meta {
+  font-size: 0.75rem;
+  text-align: right;
+  color: #9ca3af;
+}
+
+.badge-sm {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  margin-left: 4px;
+}
+
+.back-btn {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+/* Lessons list */
+.lesson-list {
+  margin-top: 6px;
+  border-top: 1px solid rgba(31,41,55,0.9);
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-row {
+  padding: 6px 8px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, rgba(34,197,94,0.08), transparent 60%),
+              #020617;
+  border: 1px solid #1f2937;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.lesson-header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lesson-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.lesson-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+
+.lesson-controls input[type="number"] {
+  width: 48px;
+  padding: 2px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.lesson-body {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.lesson-body strong {
+  font-weight: 600;
+}
+
+.lesson-formulas {
+  margin-top: 2px;
+  margin-left: 14px;
+}
+
+.lesson-formulas li {
+  margin-bottom: 2px;
+}
+
+/* Revision desk */
+.revision-desk {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(148,163,184,0.5);
+}
+
+.revision-desk h4 {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.revision-item {
+  font-size: 0.78rem;
+  color: #e5e7eb;
+  margin-bottom: 3px;
+}
+/* ===== STUDY: YOUR NOTES AFTER COMPLETION ===== */
+.lesson-notes {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(148,163,184,0.5);
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.lesson-notes h5 {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.notes-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notes-field label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.notes-textarea {
+  resize: vertical;
+  min-height: 40px;
+  max-height: 120px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+}
+
+.notes-locked {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.notes-lock-msg {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 3px;
+}
+/* ===== TRAINING ===== */
+.training-header-line {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.training-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.training-meta span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.4);
+  background: rgba(15,23,42,0.9);
+}
+
+.training-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.training-group {
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at top left, rgba(248,250,252,0.03), transparent 60%),
+              #020617;
+  padding: 6px 8px;
+}
+
+.training-group-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.training-exercise {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.training-exercise + .training-exercise {
+  margin-top: 3px;
+}
+
+.training-exercise input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.training-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-top: 6px;
+}
+
+.training-controls-row label {
+  margin-right: 4px;
+}
+
+.training-controls-row input[type="number"] {
+  width: 60px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  background: rgba(15,23,42,0.9);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-pill span {
+  font-size: 0.75rem;
+}
+
+.toggle-pill[data-on="true"] {
+  border-color: #22c55e;
+  background: rgba(22,163,74,0.18);
+}
+
+.water-pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  font-size: 0.75rem;
+}
+/* ===== TRAINING ===== */
+.training-header-line {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.training-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.training-meta span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.4);
+  background: rgba(15,23,42,0.9);
+}
+
+.training-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.training-group {
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at top left, rgba(248,250,252,0.03), transparent 60%),
+              #020617;
+  padding: 6px 8px;
+}
+
+.training-group-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.training-exercise {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #e5e7eb;
+}
+
+.training-exercise + .training-exercise {
+  margin-top: 3px;
+}
+
+.training-exercise input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.training-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-top: 6px;
+}
+
+.training-controls-row label {
+  margin-right: 4px;
+}
+
+.training-controls-row input[type="number"] {
+  width: 60px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  background: rgba(15,23,42,0.9);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-pill span {
+  font-size: 0.75rem;
+}
+
+.toggle-pill[data-on="true"] {
+  border-color: #22c55e;
+  background: rgba(22,163,74,0.18);
+}
+
+.water-pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  font-size: 0.75rem;
+}
+
+/* ===== FOOD PLANNER ===== */
+.food-header-line {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.food-week-usage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.food-week-usage span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.4);
+  background: rgba(15,23,42,0.9);
+}
+
+.food-meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.food-meal-card {
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: radial-gradient(circle at top left, rgba(34,197,94,0.07), transparent 60%),
+              #020617;
+  padding: 6px 8px;
+  font-size: 0.78rem;
+}
+
+.food-meal-card h3 {
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.food-meal-card select,
+.food-meal-card input[type="number"] {
+  width: 100%;
+  margin-top: 3px;
+  padding: 3px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(148,163,184,0.6);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+}
+
+.food-meal-note {
+  margin-top: 3px;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.food-meal-quote {
+  margin-top: 4px;
+  font-size: 0.74rem;
+  color: #a5b4fc;
+}
+.coach-btn {
+  margin-top: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.7);
+  background: rgba(15,23,42,0.9);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.coach-btn:hover {
+  background: rgba(34,197,94,0.15);
+  border-color: #22c55e;
+}
+.sleep-header-line {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.sleep-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.sleep-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sleep-input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.sleep-input-block input,
+.sleep-input-block select,
+#sleepNoteInput {
+  background: rgba(15,23,42,0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.5);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+#sleepNoteInput {
+  border-radius: 12px;
+  resize: vertical;
+}
+
+.sleep-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sleep-stat {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+.sleep-note-label {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.sleep-tip {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
