@@ -5,402 +5,474 @@ const EXAM_SEASON = {
 };
 
 // ===== STUDY DATA =====
-// EXAMPLE SUBJECTS – replace with your real ones later.
 const SUBJECTS = [
-  // ----------------- PHY110 - ENGINEERING PHYSICS -----------------
+  // ----------------- CHE110 - ENVIRONMENTAL STUDIES -----------------
   {
-    id: "phy110",
-    code: "PHY110",
-    name: "ENGINEERING PHYSICS",
-    credits: 3,
-    examDate: "2026-01-05T00:00:00",
+    id: "che110",
+    code: "CHE110",
+    name: "CHE110:ENVIRONMENTAL STUDIES",
+    credits: 2,
+    examDate: "2025-12-19T00:00:00",
     lessons: [
       {
-        id: "phy_u1",
-        title: "Unit 1: Electromagnetic theory",
+        id: "che_u1",
+        title: "Unit I: Introduction and sustainable development",
         weight: 1,
         formulas: [],
-        summary:
-          "Electromagnetic theory : scalar and vectors fields, concept of gradient, divergence and curl, Gauss theorem and Stokes theorem (qualitative), Poisson and Laplace equations, continuity equation, Maxwell electromagnetic equations (differential and integral forms), physical significance of Maxwell equations, Ampere Circuital Law, Maxwell displacement current and correction in Ampere Circuital Law",
+        summary: "Introduction to environment, components of environment, spheres of earth, multidisciplinary nature, scope and importance of environmental studies, concept of sustainability, sustainable development, carrying capacity, pillars of sustainability, sustainable development goals",
         revision: ""
       },
       {
-        id: "phy_u2",
-        title: "Unit 2: Lasers and applications",
+        id: "che_u2",
+        title: "Unit II: Natural resources and ecosystem",
         weight: 1,
         formulas: [],
-        summary:
-          "Lasers and applications : fundamentals of laser- energy levels in atoms, Radiation matter interaction, Absorption of light, spontaneous emission of light, stimulated emission of light, population of energy levels, Einstein A and B coefficients, metastable state, population inversion, resonant cavity, excitation mechanisms, Nd - YAG, He-Ne Laser, Semiconductor Laser, lasing action, properties of laser, applications of laser: holography",
+        summary: "Introduction to natural resources, renewable and non renewable resources, land, water, forest and energy resources- their associated problems and remedial measures, role of individual in conservation of natural resources, ecosystem: structure and function of ecosystem, types of ecosystem, energy flow in an ecosystem: food chains and food webs, ecological pyramids, ecological succession",
         revision: ""
       },
       {
-        id: "phy_u3",
-        title: "Unit 3: Fiber optics",
+        id: "che_u3",
+        title: "Unit III: Biodiversity and conservation",
         weight: 1,
         formulas: [],
-        summary:
-          "Fiber optics : fiber optics introduction, optical fiber as a dielectric wave guide, total internal reflection, acceptance angle, numerical aperture, relative refractive index, V-number, step index and graded index fibers, losses associated with optical fibers",
+        summary: "Definition, levels of biological diversity- genetic, species and ecosystem diversity, importance of biodiversity: ecosystem services, ecological, economic, social, aesthetic and informational value, hot spots of biodiversity, threats to biodiversity: habitat loss, poaching of wildlife, biological invasions, human wildlife conflicts, species of conservation concern: extinct species, endangered species, vulnerable species, rare species, EDGE species, conservation of biodiversity: in-situ and ex-situ conservation, biogeographic zones of India, India as a mega diversity nation",
         revision: ""
       },
       {
-        id: "phy_u4",
-        title: "Unit 4: Quantum mechanics",
+        id: "che_u4",
+        title: "Unit IV: Environmental pollution",
         weight: 1,
         formulas: [],
-        summary:
-          "Quantum mechanics : need of quantum mechanics, photoelectric effect, concept of de Broglie matter waves, wavelength of matter waves in different forms, Heisenberg uncertainty principle, concept of phase velocity and group velocity (qualitative), wave function and its significance, Schrodinger time dependent and independent equation, particle in a box, tunneling effect (Qualitative idea)",
+        summary: "Definition, types and causes, effects and controls: air, water, soil, noise and radiation pollution, emerging pollutants, fireworks and their ill-effects, global warming, climate change, ozone layer depletion, acid rain and impacts on human communities and agriculture, case studies on pollution, solid waste management- control measures of urban and industrial waste",
         revision: ""
       },
       {
-        id: "phy_u5",
-        title: "Unit 5: Solid state physics",
+        id: "che_u5",
+        title: "Unit V: Disaster management",
         weight: 1,
         formulas: [],
-        summary:
-          "Solid state physics : free electron theory (Introduction), diffusion and drift current (qualitative), fermi energy, fermi-dirac distribution function, and theory of solids -formation of allowed and forbidden energy bands, concept of effective mass - electrons and holes, Hall effect (with derivation), semiconductors and insulators, fermi level for intrinsic and extrinsic semiconductors, direct and indirect band gap semiconductors, solar cell basics",
+        summary: "Natural disasters: water related (floods and drought), air related (cyclone and storms), earth related (earthquakes, landslides, avalanches, volcanic eruptions), manmade disasters: nuclear disasters, chemical disasters, biological disasters, transport accidents, disaster management: national disaster management framework, role of governmental agencies, NGOs, community-based organizations and media for disaster response",
         revision: ""
       },
       {
-        id: "phy_u6",
-        title: "Unit 6: Introduction to engineering materials",
+        id: "che_u6",
+        title: "Unit VI: Human communities and environment",
         weight: 1,
         formulas: [],
-        summary:
-          "Introduction to engineering materials : dielectric materials definition, dielectric constant, magnetic materials: dia, para, ferromagnetic materials, magnetic data storage, piezoelectric materials: direct and inverse piezoelectric methods, superconducting materials: properties, Meissner effect, Type I & Type II superconductors, applications",
+        summary: "Human population growth: impacts on environment, human health and welfare, environmental ethics, public awareness, cultural practices for environmental conservation, tribal populations and environmental conservation, environmental laws in India, environmental movements: Bishnois of Rajasthan, Chipko movement, Appiko movement, Jungle bachao andolan, Silent valley movement, Narmada Bachao Andolan, Tehri Dam conflict",
         revision: ""
       }
     ]
   },
 
-  // ----------------- MTH165 - MATHEMATICS FOR ENGINEERS -----------------
+  // ----------------- CSE101 - COMPUTER PROGRAMMING -----------------
   {
-    id: "mth165",
-    code: "MTH165",
-    name: "MATHEMATICS FOR ENGINEERS",
+    id: "cse101",
+    code: "CSE101",
+    name: "CSE101:COMPUTER PROGRAMMING",
     credits: 4,
     examDate: "2025-12-19T00:00:00",
     lessons: [
       {
-        id: "mth_u1",
-        title: "Unit 1: Linear Algebra",
+        id: "cse101_u1",
+        title: "Unit I: Basics and introduction to C",
         weight: 1,
         formulas: [],
-        summary:
-          "Linear Algebra : Review of matrices, Elementary operations of matrices, Rank of a matrix, Linear dependence and independence of vectors, Solution of Linear system of equations, Inverse of matrices, Eigen values and Eigen vectors, Properties of Eigen values, Cayley-Hamilton theorem",
+        summary: "The C character set, Identifiers and keywords, Data types, Constants and variables, Expressions, Arithmetic operators, Unary, Relational, Logical, Assignment and conditional operators, Bitwise operators",
         revision: ""
       },
       {
-        id: "mth_u2",
-        title: "Unit 2: Differential and integral calculus",
+        id: "cse101_u2",
+        title: "Unit II: Control structures and Input/Output functions",
         weight: 1,
         formulas: [],
-        summary:
-          "Differentiatial and integral calculus : General rules of differentiation, Derivatives of standard functions, Derivatives of Parametric forms, Derivatives of implicit functions, Logarithmic differentiation,, properties of indefinite integral, Methods of integration-By Parts, Methods of integration-By Partial fractions, Properties of definite integral",
+        summary: "If, If else, Switch case statements, While, For, Do-while loops, Break and continue statements, Goto, Return, Type conversion and type modifiers, Designing structured programs in C, Formatted and unformatted Input/Output functions like printf(), Scanf(), Puts(), Gets() etc",
         revision: ""
       },
       {
-        id: "mth_u3",
-        title: "Unit 3: Application of derivatives",
+        id: "cse101_u3",
+        title: "Unit III: User defined functions and Storage classes",
         weight: 1,
         formulas: [],
-        summary:
-          "Application of derivatives : Rolle’s theorem, Mean value theorems, Taylor’s theorems with remainders, Maclaurin theorems with remainders, indeterminate forms, L' Hospital's rule, maxima and minima.",
+        summary: "Function prototypes, Function definition, Function call including passing arguments by value and passing arguments by reference, Math library functions, Recursive functions, Scope rules (local and global scope), Storage classes in C namely auto, Extern, Register, Static storage classes",
         revision: ""
       },
       {
-        id: "mth_u4",
-        title: "Unit 4: Multivariate functions",
+        id: "cse101_u4",
+        title: "Unit IV: Arrays in C",
         weight: 1,
         formulas: [],
-        summary:
-          "Multivariate functions : Functions of two variables, Limits and Continuity, Partial derivatives, Total derivative and differentiability, Chain rule, Euler's theorem for Homogeneous functions, Maxima and Minima, Lagrange method of multiplier",
+        summary: "Declaring and initializing arrays in C, Defining and processing 1D and 2D arrays, Array applications, Passing arrays to functions, inserting and deleting elements of an array, Searching including linear and binary search methods, Sorting of array using bubble sort",
         revision: ""
       },
       {
-        id: "mth_u5",
-        title: "Unit 5: Multiple Integrals",
+        id: "cse101_u5",
+        title: "Unit V: Pointers, Dynamic memory allocation and Strings",
         weight: 1,
         formulas: [],
-        summary:
-          "Multiple Integrals : Double integrals, change of order of integration, Triple integrals, change of variables, Application of double integrals to calculate area and volume, Application of triple integrals to calculate volume.",
+        summary: "Pointer declaration and initialization, Types of pointers - dangling, wild, null, generic (void), Pointer expressions and arithmetic, Pointer operators, Operations on pointers, Passing pointer to a function, Pointer and one dimensional array, Dynamic memory management functions (malloc, calloc, realloc and free), Defining and initializing strings, Reading and writing a string, Processing of string, Character arithmetic, String manipulation functions and library functions of string",
         revision: ""
       },
       {
-        id: "mth_u6",
-        title: "Unit 6: Fourier series",
+        id: "cse101_u6",
+        title: "Unit VI: Derived types including structures and unions",
         weight: 1,
         formulas: [],
-        summary:
-          "Fourier series : Introduction and Euler's formulae, Conditions for a Fourier Expansion and Functions having points of discontinuity, Change of interval, Even and odd functions, Half Range series, Perseval's Formula, Complex form of Fourier Series",
+        summary: "Declaration of a structure, Definition and initialization of structures, Accessing structures, Structures and pointers, Nested structures, Declaration of a union Concepts and Basics of C++ Programming: Reading and writing data using cin and cout, Creating classes, Class objects, Accessing class members, Inline and Non-inline member functions, Differences between Structures, Unions, Enumerations and Classes, Static data members and static member functions, Difference between procedural and object oriented programming paradigms",
         revision: ""
       }
     ]
   },
 
-  // ----------------- INT108 - PYTHON PROGRAMMING -----------------
+  // ----------------- CSE121 - ORIENTATION TO COMPUTING-II -----------------
   {
-    id: "int108",
-    code: "INT108",
-    name: "PYTHON PROGRAMMING",
-    credits: 4,
-    examDate: "2025-12-16T00:00:00",
-    lessons: [
-      {
-        id: "py_u1",
-        title: "Unit 1: Setting up your Programming Environment",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Setting up your Programming Environment : Python versions, Python on windows, running a ‘Hello World’ program Variables, Expression and Statements: : Naming and using variables, Avoiding Name Error when using variables, Values and types, variables, variables name and keywords, statements, operators and operand, order of operations, operations on string, composition and comments",
-        revision: ""
-      },
-      {
-        id: "py_u2",
-        title: "Unit 2: Conditional and iterative statements",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Conditional statements : modulus operator, Random numbers, Boolean expressions, logic operators, conditional, nested conditionals Iterative statements : while statements, for loop statement, Nested for, Nested while, Random numbers in loops, encapsulation and generalization",
-        revision: ""
-      },
-      {
-        id: "py_u3",
-        title: "Unit 3: Functions and recursion",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Functions and recursion : function calls, type conversion and coercion, math functions, adding new function, parameters and argument, recursion and its use",
-        revision: ""
-      },
-      {
-        id: "py_u4",
-        title: "Unit 4: String, Lists, Tuples and Dictionaries",
-        weight: 1,
-        formulas: [],
-        summary:
-          "String : string a compound data type, length, string traversal, string slices, comparision, find function, looping and counting Lists : list values, length, membership, operations, slices, deletion, accessing elements, list and for loops, list parameters and nested list Tuples and Dictionaries : mutability and tuples, tuple assignment, tuple as return values, dictionaries operations and methods, sparse matrices, aliasing and coping",
-        revision: ""
-      },
-      {
-        id: "py_u5",
-        title: "Unit 5: Classes, objects and OOP terminology",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Classes and objects : Creating classes, creating instance objects, accessing attributes Object oriented programming terminology : Class Inheritance, Overriding Methods, Data Hiding, Function Overloading",
-        revision: ""
-      },
-      {
-        id: "py_u6",
-        title: "Unit 6: Files, Exceptions and Regular Expressions",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Files and Exceptions : text files, writing variables, Reading from a file, writing to a file, directories, pickling, handling the zero Division error exception, using try-except blocks, The else block, Handling the File Not found error exception Regular Expressions : Concept of regular expression, various types of regular expressions, using match function, Web Scraping by using Regular Expressions",
-        revision: ""
-      },
-      {
-        id: "py_practicals",
-        title: "Practicals (List of Programs)",
-        weight: 1,
-        formulas: [],
-        summary:
-          "List of Practicals: 1. Program to enter two numbers and print the arithmetic operations like +,-,*, /, // and%. 2. Write a program to find whether an inputted number is perfect or not. 3. Write a Program to check if the entered number is Armstrong or not. 4. Write a Program to find factorial of the entered number. 5. Write a Program to enter the number of terms and to print the Fibonacci Series. 6. Write a Program to enter the string and to check if it’s palindrome or not using loop. 7. Recursively find the factorial of a natural number. 8. Read a file line by line and print it. 9. Remove all the lines that contain the character “a” in a file and write it into another file. 10. Read a text file and display the number of vowels/consonants/uppercase/lowercase characters in the file. 11. Create a binary file with name and roll no. Search for a given roll number and display the name, if not found display appropriate message. 12. Write a random number generator that generates random numbers between 1 and 6 (simulates a dice). 13. Write a python program to implement a stack using a list data structure. 14. Take a sample of ten phishing e-mails (any text file) and find most common. 15. Read a text file line by line and display each word separated by a #.",
-        revision: ""
-      }
-    ]
-  },
-
-  // ----------------- MEC136 - ENGINEERING DRAWING WITH AUTOCAD -----------------
-  {
-    id: "mec136",
-    code: "MEC136",
-    name: "ENGINEERING DRAWING WITH AUTOCAD",
-    credits: 4,
-    examDate: "2025-12-29T00:00:00",
-    lessons: [
-      {
-        id: "ed_u1",
-        title: "Unit 1: Introduction to Engineering Drawing",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Introduction to Engineering Drawing : Conceptual framework of drawing instruments, line types, dimensioning, single stroke vertical gothic letter writing, scales-plain and diagonal, introduction to AutoCAD interface- units, limits, navigation, OSNAP, ortho, UCS, F-keys",
-        revision: ""
-      },
-      {
-        id: "ed_u2",
-        title: "Unit 2: Projection of Points and Lines",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Projection of Points and Lines : Introduction, concept of traces, AutoCAD commands- line, circle, arc, polyline, and dimensioning style, hands-on-practice on AutoCAD, principles of quadrants and orthographic projections, orthographic projection of points and lines (parallel, perpendicular and inclined to one plane), rectangle, polygon, ellipse",
-        revision: ""
-      },
-      {
-        id: "ed_u3",
-        title: "Unit 3: Orthographic Projections",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Orthographic Projections : Introduction, principle, orthographic projections in both first and third angle projections systems, practice, AutoCAD commands- linetype and its properties, move, rotate, trim, copy, erase, mirror, scale, fillet, chamfer, array, hands-on-practice on 2D drawings",
-        revision: ""
-      },
-      {
-        id: "ed_u4",
-        title: "Unit 4: Sectional Views",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Sectional Views : Introduction, principle, sectional views (full, half, and offset) in first and third angle projection systems, practice, AutoCAD commands- stretch, explode, offset, extend, join, region, break, hatch, hatch-edit, hands-on-practice on 2D drawings",
-        revision: ""
-      },
-      {
-        id: "ed_u5",
-        title: "Unit 5: Isometric Views",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Isometric Views : Introduction, terminology, isometric scale, isometric views of prisms, pyramids, and one object on other, dimensioning, AutoCAD commands for 3D- 3P UCS rotation, standard shapes, extrude, revolve, presspull, hands-on-practice on 3D drawings",
-        revision: ""
-      },
-      {
-        id: "ed_u6",
-        title: "Unit 6: Development of Surfaces",
-        weight: 1,
-        formulas: [],
-        summary:
-          "Development of Surfaces : Introduction, development methods, surface development of regular and truncated prisms and pyramids, AutoCAD commands for 3D- subtract, union, orbit, and visual styles, hands-on-practice on 3D drawings",
-        revision: ""
-      }
-    ]
-  },
-
-  // ----------------- CSE326 - INTERNET PROGRAMMING LABORATORY -----------------
-  {
-    id: "cse326",
-    code: "CSE326",
-    name: "INTERNET PROGRAMMING LABORATORY",
+    id: "cse121",
+    code: "CSE121",
+    name: "CSE121:ORIENTATION TO COMPUTING-II",
     credits: 2,
-    examDate: "2025-12-24T00:00:00",
+    examDate: "2025-12-19T00:00:00",
     lessons: [
       {
-        id: "ip_u1",
-        title: "Unit 1: Fundamentals of HTML",
+        id: "cse121_u1",
+        title: "Unit I: Data Science & Big Data",
         weight: 1,
         formulas: [],
-        summary:
-          "Fundamentals of HTML : Introduction to Web Technologies and HTML, Structure of an HTML Document, Root and Metadata Elements, Basic Tags: Headings, Paragraphs, Line Breaks, Horizontal Rules, Text Formatting in HTML, strong, em, mark, small, abbr, cite, dfn, Quotations and Comments, Types of HTML Tags: Paired and Unpaired, Block-level vs Inline elements",
+        summary: "Data science and its need, Applications of data science/Big data, Data science Lifecycle with use case, Big data and its 3Vs, Challenges of Big data, Skill needed for Big data, Tools usage like Apache Hadoop, Tableau, R language, Excel, Big Data on the Cloud, Use of Big Data in different areas, Job roles and skillset for Data science and Big data",
         revision: ""
       },
       {
-        id: "ip_u2",
-        title: "Unit 2: Expanding HTML Knowledge",
+        id: "cse121_u2",
+        title: "Unit II: Artificial Intelligence & Machine Learning",
         weight: 1,
         formulas: [],
-        summary:
-          "Expanding HTML Knowledge : Working with Lists: Ordered, Unordered, Definition Lists, Hyperlinks, Inserting Images, Embedding Media, HTML Favicon, HTML Div, HTML Text Formatting, Working With Tables-Colspan and Rowspan, Working with Forms- action attribute, get and post methods, Form Elements and Controls Like Text Inputs,, TextArea, Buttons, CheckBoxes, Dropdown Boxes, Radio Buttons,, Select and File Select",
+        summary: "Introduction to Al, ML and Deep Learning, Expert systems, Fuzzy systems, Augmented Reality, Use of Al in different fields - NLP, Healthcare, Agriculture, Social media monitoring, Tools and techniques for implementing Al, Google Translator, Driverless Car, ALEXA, Siri, ChatGPT, Current trends and opportunities, Job roles and skillset for Al and ML",
         revision: ""
       },
       {
-        id: "ip_u3",
-        title: "Unit 3: Introduction to Cascading Style Sheets",
+        id: "cse121_u3",
+        title: "Unit III: Cybersecurity",
         weight: 1,
         formulas: [],
-        summary:
-          "Introduction to Cascading Style Sheets : CSS rules like link and style, CSS properties like text controlling and text formatting, CSS selectors like type, id, class, Introduction To CSS and types of CSS, Inline CSS, Internal CSS, External CSS, CSS Box Model- Padding, Margin, Border, Div and Span Tag in CSS, Working with background Images, Fonts & Typography: font-family, font-size, lineheight, font-weight, text-align, applying css on tables, creating hoverable tables, applying css on all controls of forms",
+        summary: "Introduction to cybersecurity-definition, importance in digital era, CIA Triad (Confidentiality, Integrity, Availability), Cyber Threat Landscape: Insider vs External threats, Malwares, Common cyber-attacks- Phishing and Social Engineering attacks, Password and brute-force attacks Malware-based attacks, Denial of Service (DoS), Zero day attack, case study of recent cyber incidents, secure web browsing, social media and email security, personal data protection and digital footprints, Cybersecurity tools (Nmap, Wireshark, Al-based threat detection systems), cybersecurity compliance, Job roles and skill sets for cybersecurity",
         revision: ""
       },
       {
-        id: "ip_u4",
-        title: "Unit 4: JavaScript Application Development",
+        id: "cse121_u4",
+        title: "Unit IV: DevOps & Software Testing",
         weight: 1,
         formulas: [],
-        summary:
-          "JavaScript Application Development : Incorporating JavaScript in the HEAD and BODY element, Using an External JavaScript file, Using variables and operators, Using control statements such as if...else, switch, break and continue, Using looping statements such as while, do...while, for, Using Popup boxes such as Alert, Confirm, and Prompt, Working with JavaScript Objects,Properties and Methods, Variables: var, let, const",
+        summary: "Introduction to DevOps, DevOps Vs Traditional Software Development Models, DevOps Tools - Git, Docker, Selenium, Mavin, Puppet, Ansible, Kubernetes, Nagios, DevOps life cycle, role of automation in DevOps, CI/CD, fundamentals of testing, Objectives of Testing, Types of Testing, Levels of testing, Applications of software testing in IT companies, Manual Vs automation testing, Introduction to test case design (simple example), defect life cycle, Career opportunities in the field of DevOps and software testing with skillset",
         revision: ""
       },
       {
-        id: "ip_u5",
-        title: "Unit 5: JavaScript Functions, Events and Validation",
+        id: "cse121_u5",
+        title: "Unit V: Cloud Computing",
         weight: 1,
         formulas: [],
-        summary:
-          "JavaScript Functions,Events and Validation : Working with Functions-Using function arguments and return statement, Working with JavaScript Events like Form Based, Keyboard Based and Mouse Based, JavaScript Form Validation",
+        summary: "Introduction to cloud computing, Uses of cloud computing in applications services, Platform deployments, Types of cloud model implementations, Types of cloud services, Data analytics, Virtualization, Tools and techniques for implementing cloud computing, Job roles and skillset for cloud computing",
         revision: ""
       },
       {
-        id: "ip_u6",
-        title: "Unit 6: JavaScript DOM",
+        id: "cse121_u6",
+        title: "Unit VI: Full Stack Web Development & UI/UX",
         weight: 1,
         formulas: [],
-        summary:
-          "Javascript DOM : DOM introduction, DOM methods, DOM document, DOM elements, DOM HTML, DOM CSS, DOM Events",
+        summary: "Introduction to Web Development, User Interface Design, frontend, backend, databases, CRUD applications, Responsive web design, mobile-first development, Single page applications (SPA), Languages such as HTML, CSS, PHP, Java Scripts, and frameworks by using VS code tool, Overview of AR/VR-significance, How does AR/VR work? Software/Hardware and devices, Applications, Job-roles and skillset for full stack and UI/UX",
         revision: ""
       }
     ]
   },
 
-  // ----------------- CSE111 - ORIENTATION TO COMPUTING-I -----------------
+  // ----------------- CSE320 - SOFTWARE ENGINEERING -----------------
   {
-    id: "cse111",
-    code: "CSE111",
-    name: "ORIENTATION TO COMPUTING-I",
-    credits: 2,
-    examDate: "2025-12-22T00:00:00",
+    id: "cse320",
+    code: "CSE320",
+    name: "CSE320:SOFTWARE ENGINEERING",
+    credits: 3,
+    examDate: "2025-12-19T00:00:00",
     lessons: [
       {
-        id: "oc_u1",
-        title: "Unit 1: Computer System",
+        id: "cse320_u1",
+        title: "Unit I: Software Engineering Foundations & SDLC",
         weight: 1,
         formulas: [],
-        summary:
-          "Computer System : Basic structure of a computer and its components, Memories and its types- RAM, ROM, Secondary storage devices, SSD vs HDD, Processors and GPU, PC connection interface- USB, SATA, HDMI, NFC, Bluetooth, Introduction to RAID and RAID levels.",
+        summary: "Evolution and impact of software engineering, Software development life cycle (SDLC), Life cycle models (Waterfall, Prototyping, Spiral, V-Model Agile & Scrum DevOps lifecycle), Functional & Non-functional requirements, Requirement gathering & analysis, Software Requirements Specification (IEEE standard, writing & validation)",
         revision: ""
       },
       {
-        id: "oc_u2",
-        title: "Unit 2: Operating System and Computer Languages",
+        id: "cse320_u2",
+        title: "Unit II: Software Design Principles & System Architecture",
         weight: 1,
         formulas: [],
-        summary:
-          "Operating System : Operating System and its architecture, Types of Operating System, Functions of Operating System, Directory Hierarchy, Bootloader, Kernel and types of Kernels. Computer Languages : Machine language, Assembly language, High level language, Steps in development of a program, Compilation and Execution, Compiler, Interpreter, Assembler.",
+        summary: "Basic principles of software design, Modularity, Cohesion, Coupling, Types of cohesion and coupling, Measuring module independence, Design trade-offs, Function-oriented design: Data Flow Diagrams (DFD) - symbols, notations and leveling, Context diagrams and decomposition and Rules for constructing DFDs, Structure Charts - components and notation, Module hierarchy and control flow and Transform and transaction analysis, Design documentation and design review techniques",
         revision: ""
       },
       {
-        id: "oc_u3",
-        title: "Unit 3: Linux Operating System and File system management",
+        id: "cse320_u3",
+        title: "Unit III: Object-Oriented Software Development and Modeling Techniques",
         weight: 1,
         formulas: [],
-        summary:
-          "Linux Operating System : Linux OS and its features, Distribution versions, Shell commands - ls, cat, man, cd, touch, cp, mv, rmdir, mkdir, rm, chmod, pwd, ps, kill, etc, Comparison of windows and Linux OS, Virtual Machine – introduction, VM software, creating and managing VMs. File system management : File system basics, Types of file system- FAT, GFT, HFS, NDFS, UDF, Extended file system.",
+        summary: "Unified Process: Phases and core workflows, Iterative and incremental development, UML Modelling: Use Case Diagrams, Class Diagrams, Sequence Diagrams, Activity Diagrams, Object modelling process, Model validation: Consistency and completeness checking, Traceability from requirements, Coding standards and code review techniques",
         revision: ""
       },
       {
-        id: "oc_u4",
-        title: "Unit 4: Cohorts, Pathways, MOOCs and Hackathons",
+        id: "cse320_u4",
+        title: "Unit IV: Software Testing Concepts, Techniques, and Automation",
         weight: 1,
         formulas: [],
-        summary:
-          "Cohorts and Skill Sets : Introduction to Cohorts, Purpose of Cohorts, Companies, Skills required and skill sources for different Cohorts (Internal and External) Types of Cohorts : Cloud Computing, Data Science, Machine Learning, Software development (Product and Service based), Full Stack Web Development, Software Methodologies and Testing, Teaching and Research, Cyber Security Cohorts. Pathways : Introduction to Pathways, Purpose of Pathways, Job Roles for Different Pathways, Types of Pathways: Product Based, Service Based, Government Jobs, Higher studies, Entrepreneurship MOOCs and Hackathons : Introduction to MOOCs and Hackathons, Types of MOOCs, Various MOOCs Platforms, Benefits of MOOCs, Globally Recognized Hackathons and Competitions, MAANG Companies",
+        summary: "Fundamentals of software testing, Functional and Non-Functional Software Testing, Testing Techniques: Black box, White box, Boundary value, Equivalence partitioning, Levels of testing: Unit, Integration, System, UAT, Types of Software Testing: API Testing, Web Testing, Mobile Testing, Automation Testing: Selenium IDE: Installation, record & playback tests, Introduction to Selenium WebDriver (conceptual), Performance Testing basics, Security Testing basics, Introduction to Al-assisted testing tools (overview)",
         revision: ""
       },
       {
-        id: "oc_u5",
-        title: "Unit 5: Computer Network, Communication and Security Essentials",
+        id: "cse320_u5",
+        title: "Unit V: Software Project Management & DevOps Practices",
         weight: 1,
         formulas: [],
-        summary:
-          "Computer Network and Communication : Introduction to Computer Network and its types, Network topologies, Network communication devices- Routers, Switches, Modems, Hubs, access point, Client Server Model. Security Essentials : Basic security threats- Malwares and its types- Virus, Worm, Trojan horse, Spyware, Ransomware, Phishing, Password cracking, Multi Factor authentication, User Account Types and Privileges- Admin, User, Guest, Firewall basics.",
+        summary: "Project management basics, Project planning & monitoring, Cost estimation methods (Function Points, Use Case Points, COCOMO (intro), Software Configuration Management (SCM), Introduction to CI/CD tools (GitHub Actions, GitHub CI/CD workflows), Scheduling Techniques (CPM, PERT, Gantt Charts)",
         revision: ""
       },
       {
-        id: "oc_u6",
-        title: "Unit 6: Version Control, Modern AI Trends and Profile Creation",
+        id: "cse320_u6",
+        title: "Unit VI: Quality Management, Maintenance & Emerging Technologies",
         weight: 1,
         formulas: [],
-        summary:
-          "Version Control : Overview of Git and GitHub, install git and create a GitHub account, create a local git repository, add a new file to the repository, Creating a commit, Creation of a new Branch Profile. Modern AI Trends and Tools : Introduction to AI, Real life application of AI, Introduction to Generative AI and its types, Generative AI tools– Text Generation Tools: ChatGPT, Gemini AI, Image Generation Tools, Video and animation tools, Research Tools: Perplexity AI, NotebookLM, JenniAI, Prompt Engineering – Good vs poor prompt, Ethical use of AI and AI tools. Profile Creation : Figma, GitHub, Stack overflow, HackerRank, HackerEarth, GeeksforGeeks, Leetcode.",
+        summary: "Quality management & standards: ISO 9001, SEI CMMI, Six Sigma & PSP, Computer-Aided Software Engineering (CASE tools), Software maintenance: types & challenges, Software reuse & Component-Based Software Development (CBSD), Advanced and Future Techniques: Cloud-native software development, Al in software development (GitHub Copilot, Code Whisperer), Low-code / No-code platforms",
+        revision: ""
+      }
+    ]
+  },
+
+  // ----------------- ECE249 - BASIC ELECTRICAL AND ELECTRONICS ENGINEERING -----------------
+  {
+    id: "ece249",
+    code: "ECE249",
+    name: "ECE249:BASIC ELECTRICAL AND ELECTRONICS ENGINEERING",
+    credits: 3,
+    examDate: "2025-12-19T00:00:00",
+    lessons: [
+      {
+        id: "ece249_u1",
+        title: "Unit I: Fundamentals of Electrical Laws, Semiconductor Devices and its Applications",
+        weight: 1,
+        formulas: [],
+        summary: "Ohm's Law, Kirchhoff's Law, Voltage division rule, Current division rule, Basics of semiconductors (Intrinsic and Extrinsic), PN junction diode (working and characteristics) and its applications (rectifiers and switch), Bipolar junction transistor (types, modes, construction, and working CE configuration)",
+        revision: ""
+      },
+      {
+        id: "ece249_u2",
+        title: "Unit II: Introduction of Arduino and Sensors",
+        weight: 1,
+        formulas: [],
+        summary: "Analog and digital signals, Arduino board (pin configuration and description), IR sensor., LDR, basic principle of ultrasonic sensor, Temperature sensor (DHT11/DHT22)",
+        revision: ""
+      },
+      {
+        id: "ece249_u3",
+        title: "Unit III: Introduction to number system and logic gates",
+        weight: 1,
+        formulas: [],
+        summary: "Number system (conversion), codes (B-G,GB, Excess-3, BCD), Compliments, Binary Arithmetic (addition and subtraction using 2's complement), logic gates, boolean algebra, SOP and POS, K- Map (up to 4 variables)",
+        revision: ""
+      },
+      {
+        id: "ece249_u4",
+        title: "Unit IV: Introduction to Combinational Logic Circuits",
+        weight: 1,
+        formulas: [],
+        summary: "Combinational Logic Circuits: Adders, Subtractors, Multiplexers, De-multiplexers, Decoders, Encoders, Comparator upto 2 bit",
+        revision: ""
+      },
+      {
+        id: "ece249_u5",
+        title: "Unit V: Introduction to Sequential Logic Circuits",
+        weight: 1,
+        formulas: [],
+        summary: "Latch (SR and D), Flip-Flop (SR, JK, D and T), MasterSlave flip-flop, Conversion of basic flip-flop",
+        revision: ""
+      },
+      {
+        id: "ece249_u6",
+        title: "Unit VI: Applications of Sequential Circuits",
+        weight: 1,
+        formulas: [],
+        summary: "Registers: Operation of basic shift registers (SISO, SIPO, PISO, PIPO), Counters: Asynchronous counter (UP/DOWN/Mod-N), Synchronous counter (UP/DOWN/Mod-N), Ring counter and Johnson ring counter",
+        revision: ""
+      }
+    ]
+  },
+
+  // ----------------- INT306 - DATABASE MANAGEMENT SYSTEMS -----------------
+  {
+    id: "int306",
+    code: "INT306",
+    name: "INT306: DATABASE MANAGEMENT SYSTEMS",
+    credits: 4,
+    examDate: "2025-12-19T00:00:00",
+    lessons: [
+      {
+        id: "int306_u1",
+        title: "Unit I: Introduction to database",
+        weight: 1,
+        formulas: [],
+        summary: "Purpose of database systems, components of dbms, applications of dbms, three tier dbms architecture, data independence, database schema, instance, data modeling, entity relationship model, relational model, Comparison of relational and non-relational databases",
+        revision: ""
+      },
+      {
+        id: "int306_u2",
+        title: "Unit II: Relational query language",
+        weight: 1,
+        formulas: [],
+        summary: "Introduction to data definition language, data manipulation, data control and transaction control language, integrity constraints, database keys, SQL basic operations",
+        revision: ""
+      },
+      {
+        id: "int306_u3",
+        title: "Unit III: Relational Operations",
+        weight: 1,
+        formulas: [],
+        summary: "Aggregate functions, Sql joins, set operators, views, subqueries, relational algebra, Window functions, Hashing, Indexing and Query Optimization.",
+        revision: ""
+      },
+      {
+        id: "int306_u4",
+        title: "Unit IV: Relational Database Design",
+        weight: 1,
+        formulas: [],
+        summary: "Data integrity rules, functional dependency, need of normalization, first normal form, second normal form, third normal form, boyce codd normal form, multivalued dependencies, fourth normal form",
+        revision: ""
+      },
+      {
+        id: "int306_u5",
+        title: "Unit V: Programming Constructs in Databases",
+        weight: 1,
+        formulas: [],
+        summary: "Flow control statements, functions, stored procedures, cursors, triggers, exception handling Database Transaction Processing: transaction system concepts, desirable properties of transactions, schedules, serializability of schedules, concurrency control, recoverability",
+        revision: ""
+      },
+      {
+        id: "int306_u6",
+        title: "Unit VI: NoSQLDatabases",
+        weight: 1,
+        formulas: [],
+        summary: "Introduction of MongoDB, DynamoDB, Serverless cloud database, Structure of MongoDB, SQL vs NoSql, Working with MongoDB, JSON databases, JSON representation of part of the dataset, Index creation & performance comparison using EXPLAIN, Vector Databases",
+        revision: ""
+      }
+    ]
+  },
+
+  // ----------------- MTH166 - DIFFERENTIAL EQUATIONS AND VECTOR CALCULUS -----------------
+  {
+    id: "mth166",
+    code: "MTH166",
+    name: "MTH166:DIFFERENTIAL EQUATIONS AND VECTOR CALCULUS",
+    credits: 4,
+    examDate: "2025-12-19T00:00:00",
+    lessons: [
+      {
+        id: "mth166_u1",
+        title: "Unit I: Ordinary differential equations",
+        weight: 1,
+        formulas: [],
+        summary: "Exact equations, equations reducible to exact equations, equations of the first order and higher degree, Clairaut's equation",
+        revision: ""
+      },
+      {
+        id: "mth166_u2",
+        title: "Unit II: Differential equations of higher order",
+        weight: 1,
+        formulas: [],
+        summary: "Introduction to linear differential equation, Solution of linear differential equation, linear dependence and linear independence of solution, method of solution of linear differential equation- Differential operator, solution of second order homogeneous linear differential equation with constant coefficient, solution of higher order homogeneous linear differential equations with constant coefficient",
+        revision: ""
+      },
+      {
+        id: "mth166_u3",
+        title: "Unit III: Linear differential equation",
+        weight: 1,
+        formulas: [],
+        summary: "Solution of non-homogeneous linear differential equations with constant coefficients using operator method, method of variation of parameters, method of undetermined coefficient, solution of Euler-Cauchy equation, simultaneous differential equations by operator method",
+        revision: ""
+      },
+      {
+        id: "mth166_u4",
+        title: "Unit IV: Partial differential equation",
+        weight: 1,
+        formulas: [],
+        summary: "Introduction to partial differential equation, method of Separation of Variables, solution of wave equation, solution of heat equation, solution of Laplace equation",
+        revision: ""
+      },
+      {
+        id: "mth166_u5",
+        title: "Unit V: Vector calculus 1",
+        weight: 1,
+        formulas: [],
+        summary: "Limit, continuity and differentiability of vector functions, length of space curve, motion of a body or particle on a curve, gradient of a scalar field and directional derivatives, divergence and curl of vector field",
+        revision: ""
+      },
+      {
+        id: "mth166_u6",
+        title: "Unit VI: Vector calculus II",
+        weight: 1,
+        formulas: [],
+        summary: "Line integral, Greens' theorem, surface area and Surface integral, Stokes' theorem, Gauss's divergence theorem",
+        revision: ""
+      }
+    ]
+  },
+
+  // ----------------- PEL121 - COMMUNICATION SKILLS-I -----------------
+  {
+    id: "pel121",
+    code: "PEL121",
+    name: "PEL121: COMMUNICATION SKILLS-I",
+    credits: 3,
+    examDate: "2025-12-19T00:00:00",
+    lessons: [
+      {
+        id: "pel121_u1",
+        title: "Unit I: Role of parts of speech in common errors and pronunciation",
+        weight: 1,
+        formulas: [],
+        summary: "Types of nouns, usage of apostrophe 's' with nouns, order of adjectives and degrees of adjectives, prepositions",
+        revision: ""
+      },
+      {
+        id: "pel121_u2",
+        title: "Unit II: Building sentences",
+        weight: 1,
+        formulas: [],
+        summary: "Usage of and, but, both-and, either, because, in case, so, so that, since, as, for, although, while, however, despite, relative clauses",
+        revision: ""
+      },
+      {
+        id: "pel121_u3",
+        title: "Unit III: Tenses",
+        weight: 1,
+        formulas: [],
+        summary: "Rules, usage, formation, imperative negative, question tags of present, past, and future tenses",
+        revision: ""
+      },
+      {
+        id: "pel121_u4",
+        title: "Unit IV: Articles and indefinites",
+        weight: 1,
+        formulas: [],
+        summary: "Usage and comparison of definite and indefinite articles and no article, usage of the definite article with objects, usage of much, many, how, more, every, each, one, another, other, others",
+        revision: ""
+      },
+      {
+        id: "pel121_u5",
+        title: "Unit V: Active Passive Voice",
+        weight: 1,
+        formulas: [],
+        summary: "Rules and usage of active and passive voice",
+        revision: ""
+      },
+      {
+        id: "pel121_u6",
+        title: "Unit VI: Phrasal Verbs",
+        weight: 1,
+        formulas: [],
+        summary: "Commonly used phrasal verbs, phrasal verbs followed by prepositions, conjugating phrasal verbs and their use in day-to-day speaking, common words often confused",
         revision: ""
       }
     ]
@@ -1425,4 +1497,3 @@ const MEAL_OPTIONS = {
 
 
 // RULES: from our earlier decisions
-
