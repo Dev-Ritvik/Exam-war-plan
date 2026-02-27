@@ -29,6 +29,12 @@
     <button class="nav-btn" data-view="study">Study</button>
     <button class="nav-btn" data-view="training">Training</button>
     <button class="nav-btn" data-view="food">Food</button>
+    <button class="nav-btn" data-view="planner">Planner</button>
+    <button class="nav-btn" data-view="projects">Projects</button>
+    <button class="nav-btn" data-view="skills">Skills</button>
+    <button class="nav-btn" data-view="money">Money</button>
+    <button class="nav-btn" data-view="network">Network</button>
+    <button class="nav-btn" data-view="arm">Arm</button>
     <button class="nav-btn" data-view="sleep">Sleep</button>
   </nav>
 
@@ -52,6 +58,18 @@
           <div class="daily-score">
             <span>Daily Score</span>
             <div class="score-number" id="dailyScore">0</div>
+            <div class="captain-index-wrap">
+              <div class="captain-index-label">
+                <span class="captain-index-title">Captain Index</span>
+                <span class="captain-index-number">
+                  <span id="captainIndexValue">0</span> / 100
+                </span>
+              </div>
+              <div class="progress-bar captain-index-bar">
+                <div class="progress-fill captain-index-fill" id="captainIndexProgress"></div>
+              </div>
+              <div class="captain-index-rank" id="captainIndexRank">—</div>
+            </div>
           </div>
         </section>
 
@@ -118,6 +136,112 @@
             </div>
             <p class="block-foot" id="foodQuote">“Discipline tastes better than junk.”</p>
           </div>
+          <!-- Planner block -->
+          <div class="block-card" data-open="planner">
+            <div class="block-header">
+              <h3>Planner</h3>
+              <span class="tag" id="plannerTag">Execution</span>
+            </div>
+            <p class="block-sub">
+              MITs done: <span id="plannerMITsDone">0</span> / 3
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="plannerProgress"></div>
+            </div>
+            <p class="block-foot">
+              Deep work: <span id="plannerDeepWorkFoot">0</span> h •
+              Wasted: <span id="plannerWastedFoot">0</span> h
+            </p>
+          </div>
+          <!-- Projects block -->
+          <div class="block-card" data-open="projects">
+            <div class="block-header">
+              <h3>Projects</h3>
+              <span class="tag" id="projectsTag">Output</span>
+            </div>
+            <p class="block-sub">
+              Active: <span id="projectsActiveCount">0</span> •
+              Done this month: <span id="projectsDoneMonth">0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="projectsProgress"></div>
+            </div>
+            <p class="block-foot">
+              Last worked: <span id="projectsLastWorked">—</span>
+            </p>
+          </div>
+          <!-- Skills block -->
+          <div class="block-card" data-open="skills">
+            <div class="block-header">
+              <h3>Skills</h3>
+              <span class="tag" id="skillsTag">Compounding</span>
+            </div>
+            <p class="block-sub">
+              Practiced today: <span id="skillsPracticedToday">0</span> •
+              Total skills: <span id="skillsTotalCount">0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="skillsProgress"></div>
+            </div>
+            <p class="block-foot">
+              Neglected: <span id="skillsNeglectedCount">0</span> skill(s) •
+              Top level: <span id="skillsTopLevel">—</span>
+            </p>
+          </div>
+          <!-- Money block -->
+          <div class="block-card" data-open="money">
+            <div class="block-header">
+              <h3>Money</h3>
+              <span class="tag" id="moneyTag">Capital</span>
+            </div>
+            <p class="block-sub">
+              Balance: <span id="moneyBalanceCard">₹0</span> •
+              This month: <span id="moneyMonthNet">₹0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="moneyProgress"></div>
+            </div>
+            <p class="block-foot">
+              Income: <span id="moneyMonthIncomeCard">₹0</span> •
+              Expenses: <span id="moneyMonthExpenseCard">₹0</span>
+            </p>
+          </div>
+          <!-- Network block -->
+          <div class="block-card" data-open="network">
+            <div class="block-header">
+              <h3>Network</h3>
+              <span class="tag" id="networkTag">Leverage</span>
+            </div>
+            <p class="block-sub">
+              Contacts: <span id="networkContactCount">0</span> •
+              Cold: <span id="networkColdCount">0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="networkProgress"></div>
+            </div>
+            <p class="block-foot">
+              Interactions this week: <span id="networkWeekInteractions">0</span> •
+              Opps: <span id="networkOppCount">0</span>
+            </p>
+          </div>
+          <!-- Arm Wrestling block -->
+          <div class="block-card" data-open="arm">
+            <div class="block-header">
+              <h3>Arm Wrestling</h3>
+              <span class="tag" id="armTag">Dominance</span>
+            </div>
+            <p class="block-sub">
+              Body weight: <span id="armBodyWeightCard">—</span> kg •
+              Matches: <span id="armMatchCountCard">0</span>
+            </p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="armProgress"></div>
+            </div>
+            <p class="block-foot">
+              Recovery: <span id="armRecoveryCard">—</span> •
+              Assoc. members: <span id="armMembersCard">0</span>
+            </p>
+          </div>
         </section>
       </section>
 
@@ -166,6 +290,66 @@
     <!-- filled by app.js -->
   </div>
 </section>
+<!-- PLANNER VIEW -->
+      <section id="view-planner" class="view">
+        <header class="section-header">
+          <h2>Daily Planner</h2>
+          <p>Lock in your MITs, protect deep work time, kill wasted hours.</p>
+        </header>
+        <div class="panel" id="plannerPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
+      <!-- PROJECTS VIEW -->
+      <section id="view-projects" class="view">
+        <header class="section-header">
+          <h2>Projects</h2>
+          <p>Track what you are building, shipping, and completing.</p>
+        </header>
+        <div id="projectsPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
+      <!-- SKILLS VIEW -->
+      <section id="view-skills" class="view">
+        <header class="section-header">
+          <h2>Skills</h2>
+          <p>Log hours, earn XP, level up. Skills compound when you show up daily.</p>
+        </header>
+        <div id="skillsPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
+      <!-- MONEY VIEW -->
+      <section id="view-money" class="view">
+        <header class="section-header">
+          <h2>Money</h2>
+          <p>Track every rupee in and out. Financial clarity is financial power.</p>
+        </header>
+        <div id="moneyPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
+      <!-- NETWORK VIEW -->
+      <section id="view-network" class="view">
+        <header class="section-header">
+          <h2>Network</h2>
+          <p>Relationships are infrastructure. Build them before you need them.</p>
+        </header>
+        <div id="networkPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
+      <!-- ARM WRESTLING VIEW -->
+      <section id="view-arm" class="view">
+        <header class="section-header">
+          <h2>Arm Wrestling Performance</h2>
+          <p>Track your strength, recovery, matches, and association growth.</p>
+        </header>
+        <div id="armPanel">
+          <!-- filled by app.js -->
+        </div>
+      </section>
 
     </main>
   </div>
